@@ -1,6 +1,6 @@
 
 HOMEWORK - 1
-"start:h1": "node index.js",
+"npm run start:h1": "node index.js",
 
 HOMEWORK - 2
-"start:h2": "nodemon server.js"
+"npm run start:h2": "nodemon server.js"
