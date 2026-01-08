@@ -15,7 +15,7 @@ const server = http.createServer((req, res) => {
   totalRequests++;
   lastRequestTime = new Date().toISOString();
 
-  console.log(`[REQUEST] ${req.method} ${req.url}`);
+  console.log(`REQUEST TO SERVER: ${req.method} ${req.url}`);
 
   if (req.method === 'GET' && req.url === '/students') {
     console.log('[GET /students] handler start');
@@ -51,10 +51,6 @@ const server = http.createServer((req, res) => {
         };
 
         students.push(newStudent);
-
-        setImmediate(() => {
-          console.log('[POST /students] after parsing body (setImmediate)');
-        });
 
         res.writeHead(201, {
           'Content-Type': 'application/json'
@@ -104,6 +100,6 @@ const server = http.createServer((req, res) => {
   res.end(JSON.stringify({ error: 'Not found' }));
 });
 
-server.listen(3000, () => {
-  console.log('Server running on http://localhost:3000');
+server.listen(8080, () => {
+  console.log('Server running on http://localhost:8080');
 });
